@@ -1,0 +1,94 @@
+if u_let == "on" and u_num == "on" and u_spec == "on": #if all the password options are selected 
+        for i in range(pass_len):
+            decider = random.randint(0,2)
+            if decider == 0:
+                store.append(let[random.randint(0, 51)])
+
+            if decider == 1:
+                store.append(nums[random.randint(0, 8)])
+
+            if decider == 2:
+                store.append(chars[random.randint(0, len(chars) - 1)])
+
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+    elif  u_let == "on" and u_num == "on" and u_spec == "off": #if only the letter and number option are selected
+
+        for i in range(pass_len):
+
+            decider = random.randint(0,1)
+            if decider == 0:
+                store.append(let[random.randint(0, 51)])
+
+            if decider == 1:
+                store.append(nums[random.randint(0, 8)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+    elif u_let == "on" and u_spec == "on" and u_num == "off": # if only the letter and special number options are selected
+
+        for i in range(pass_len):
+
+            decider = random.randint(0,1)
+            if decider == 0:
+                store.append(let[random.randint(0, 51)])
+
+            if decider == 1:
+                store.append(chars[random.randint(0, len(chars) - 1)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+    
+    elif u_num == "on" and u_spec == "on" and u_let == "off": # if only the number and the special letter options are selected
+        for i in range(pass_len):
+            decider = random.randint(0,1)
+            if decider == 0:
+               store.append(nums[random.randint(0, 8)]) 
+
+            if decider == 1:
+               store.append(chars[random.randint(0, len(chars) - 1)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+
+    elif u_let == "on" and u_num == "off" and u_spec == "off":  #if only the letter option is selected
+        for i in range(pass_len):
+            count = random.randint(0, 2)
+            store.append(let[random.randint(0, 51)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+
+    elif u_let == "off" and u_num == "on" and u_spec == "off": #if only the number option is selected
+        for i in range(pass_len):
+            count = random.randint(0, 2)
+            store.append(nums[random.randint(0, 8)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+
+    elif u_let == "off" and u_num == "off" and u_spec == "on": #if only the spectial letter option has been selected
+        for i in range(pass_len):
+            count = random.randint(0, 2)
+            store.append(chars[random.randint(0, len(chars) - 1)])
+
+        new_pass = ''.join(store)
+        final_pass = password
+        return(new_pass)
+
+ let = list(letters)
+    nums = list(numbers)
+    chars = list(characters)
